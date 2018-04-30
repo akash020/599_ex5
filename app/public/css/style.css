@@ -1,0 +1,262 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100, 300);
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #3b7779;
+}
+
+p {
+  font-family: inherit;
+  font-weight: 100;
+}
+
+
+li {
+  font-family: inherit;
+  font-weight: 100;
+}
+
+
+a {
+  color: #2b5649;
+}
+
+iframe {
+  width: 300px;
+  height: 250px;
+}
+
+#map {
+  width:300px;
+  height:250px;
+  margin: 2px 10px 2px 0px;
+  float: left;
+}
+
+#moveleft {
+  float: left;
+  display: inline;
+  margin: 2px 10px 2px 0px;
+}
+
+/**  Header Navigation **/
+
+header {
+  font-size: 1.5 em;
+
+}
+
+header .jumbotron {
+  height: 40vh;
+  margin-bottom: 0;
+  background: url(../images/background.png) no-repeat 100% 5%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/**  Navbar **/
+
+.navbar {
+  background: #2b5999;
+background-color: red;
+  margin-bottom: 0;
+  border-radius: 0;
+  left: auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+.navbardrop {
+  padding: 3px;
+  left: auto;
+  margin: 2px 10px 2px 0px;
+  float: left;
+}
+
+.navbar-default {
+  border: none;
+  border-radius: 0;
+  padding: 0px;
+}
+
+.navbar-brand {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+.navbar-expand-md {
+  background: #2b5999;
+  margin-bottom: 0;
+  margin-right:  0px;
+  border-radius: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+.maincontent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 160%;
+  background-color: #1001;
+}
+
+.sidebar {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  line-height: 130%;
+  background-color: #1001;
+}
+
+.sidebar .sidebar-title {
+  font-size: 1em;
+}
+
+.sidebar .sidebar-body li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    line-height: 160%;
+  }
+  .sidebar .sidebar-title {
+    font-size: 1em;
+  }
+}
+
+.highlightsList {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  line-height: 140%;
+}
+
+#highlightsList .highlightsList-img {
+  margin: 40px 40px 40px 40px;
+  padding: 4px;
+}
+
+.highlightsList-title {
+  font-size: 1.7em;
+}
+
+#home .highlightsList-title {
+  font-size: 1em;
+}
+
+#highlightsDetail .highlightsList-title {
+  font-size: 2.4em;
+}
+
+#highlightsDetail .highlightsList-img {
+  margin: 40px 40px 40px 40px;
+}
+
+.form-control {
+  font-weight: 100;
+  font-size: 1.7rem;
+}
+
+.chat-form {
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+.jumbotron {
+  padding: 20px 0;
+  background-color: #Blue;
+}
+
+/**  chat-display **/
+
+.chat-display {
+  min-height: 150px;
+  max-height: 40vh;
+  overflow: scroll;
+  font-size: 1.2em;
+}
+
+.chat-display p {
+  font-size: .9em;
+  padding: 0 10px;
+}
+
+.feedback, .feedback-form-title {
+  font-size: 2rem;
+}
+
+.feedback-form {
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+
+.feedback-title {
+  font-size: 1.2em;
+}
+
+
+
+.feedback-form-title {
+  font-size: 2em;
+}
+
+.feedback-name {
+  font-size: .6em;
+  font-weight: 100;
+}
+
+.feedback-message {
+  font-weight: 100;
+  font-size: .9em;
+  line-height: 120%;
+  margin-top: 5px;
+}
+
+.feedback-item {
+  border-bottom: 1px solid gray;
+  padding: 8px 0;
+}
+
+.feedback-item:last-of-type {
+  border-bottom: none;
+}
+
+.hide {
+  display: none;
+}
+
+/**  pixgrid **/
+
+.pixgrid {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.pixgrid img {
+  display: block;
+  padding: 5px;
+  float: left;
+  width: 50%;
+  border-radius: 10px;
+}
+
+@media (min-width: 500px) and (max-width: 1100px) {
+  .pixgrid img {
+    width: 50%;
+  }
+}

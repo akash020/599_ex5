@@ -1,0 +1,104 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYvPRtR9BRZTsAcS0kkR2yS-XFUV_dmuY&callback=initMap" async defer></script>
+<body>
+  <article class="highlightsList <% if (pageID == 'home') { %>jumbotron d-none d-sm-block col-sm-12<% } %>"><!-- line two is a string that assigns a value then second part is a control flow %> inserts plain text -->
+
+    <div class="container">
+      <div class="row">
+        <% highlights.forEach(function(item) { %> <!-- iterate through highlights array -->
+          <div class="<% if (pageID == 'home') { %>d-none d-sm-block col-sm-6 col-md-4 col-lg-3<% }%>">
+            <h3 class="highlightsList-title"><%= item.site %></h3>
+            <h5 class="highlightsList-name">Location: <a href="/highlights/<%= item.id %>"><%= item.located %></a></h5>
+            <div class="highlightsList-info">
+              <a href="/highlights/<%= item.id %>">
+
+                <% if (pageID == 'home') { %>
+                  <img class="highlights-img rounded-circle" src="<%= item.image %>" alt="Photo of <%= item.site %>"
+                  width="200" height="120"</a> <!--closing a tag-->
+                  <% } %>
+
+                  <% if (pageID == 'highlightsList') { %>
+                    <div id="moveleft">
+                      <img class="highlightsList-img rounded-circle" src="<%= item.image %>" alt="Photo of <%= item.title %>" width="300" height="250"</a>
+
+                    </div>
+                    <div id="moveleft" style="margin:5px 45px 0 10px">
+                      <iframe src="<%= item.videoEmbed %>"></iframe>
+                    </div>
+
+                    <% } %>
+
+                    <% if (pageID == 'highlightsDetail') { %>
+                      <img class="highlightsList-img img-responsive float-left" src="<%= item.image %>" alt="Photo of <%= item.site %>"
+                      width="400" height="320"</a>
+                      <% } %>
+                    </a>
+
+                    <% if (pageID !== 'home') { %>
+                      <% if (pageID == 'highlightsList') { %>
+                        <%= item.category %>
+                        <% } else { %>
+                          <div>
+                            <img class="d-none d-sm-block img-responsive float-left" src="<%= item.image %>" alt="Photo of <%= item.site %>" width="400" height="320"</a>
+                          </div>
+                          <div>
+                            <%- item.info %>
+                          </div>
+                          <script>
+                          var map;
+                          var mapCenter = {lat: 51.7, lng: -0.11};
+                          var locObj1;
+                          locObj1 = {
+                            category: "<%= item.category %>",
+                            info: "<%= item.site %>",
+                            lat: <%= item.lat %>,
+                            lng: <%= item.long %>
+                          };
+                          locArray = [locObj1];
+                          function placeMarker(mapToUse, locArrayToUse, indexToUse){
+                            var locObjToUse = locArrayToUse[indexToUse];
+                            var markerPos = {lat: locObjToUse.lat, lng: locObjToUse.lng}
+                            var marker = new google.maps.Marker({
+                              position: markerPos,
+                              map: mapToUse
+                            });
+                            var contentString =
+                            '<div>'+ locObjToUse.info + '</div>';
+                            var infowindow = new google.maps.InfoWindow({
+                              content: contentString
+                            });
+                            marker.addListener('mouseover', function() {
+                              infowindow.open(mapToUse, marker);
+                            });
+                            marker.addListener('mouseout', function() {
+                              infowindow.close(mapToUse, marker);
+                            });
+                          }
+                          function initMap() {
+                            map = new google.maps.Map(document.getElementById('map'), {
+                              center: mapCenter,
+                              zoom: 5,
+                              gestureHandling: 'none',
+                              mapTypeControl: false,
+                              zoomControl: false,
+                              scaleControl: false,
+                              scrollwheel: false,
+                              fullscreenControl: false
+                            });
+                            for (i = 0; i < locArray.length; i++) {
+                              placeMarker(map, locArray, i);
+                            }
+                          }
+                          </script>
+                          <div id="moveleft">
+                            <iframe src="<%= item.videoEmbed %>"></iframe>
+                          </div>
+                          <div id="map"></div>
+                          <% } %>
+                          <% } %>
+                        </div>
+                      </div>
+                      <%  }); %>
+                    </div>
+                  </div>
+                </article>
+              </body>
